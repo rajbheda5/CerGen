@@ -1,5 +1,7 @@
+import 'dart:convert';
 import 'dart:io';
 
+import 'package:crypto/crypto.dart';
 import 'package:flutter/material.dart';
 
 import 'package:pdf/pdf.dart';
@@ -8,6 +10,12 @@ import 'package:printing/printing.dart';
 import 'package:path_provider/path_provider.dart';
 
 Future<void> pdfGenerator(name) async {
+  var key = utf8.encode('p@ssw0rd');
+  var bytes = utf8.encode('$name');
+  
+  var hmacSHA256= new Hmac(sha256, key);
+  var digest = hmacSHA256.convert(bytes);
+
   final _pdf = pdf.Document();
   final _assetImage = await pdfImageFromImageProvider(
     pdf: _pdf.document,
@@ -69,6 +77,12 @@ Future<void> pdfGenerator(name) async {
                   fontWeight: pdf.FontWeight.bold,
                   color: PdfColors.grey800,
                 ),
+              ),
+              pdf.SizedBox(
+                height: 30,
+              ),
+              pdf.Text('$digest',
+              style: pdf.TextStyle(fontSize: 10),
               ),
             ],
           ),

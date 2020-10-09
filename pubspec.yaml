@@ -18,6 +18,7 @@ dependencies:
   share_extend: # sharing files
   provider: # state-management
   printing: # using image assets in pdf generation
+  crypto: #used for hashing
 
 dev_dependencies:
   flutter_test:
