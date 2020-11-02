@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Certificate Generator',
       theme: ThemeData(
-        primarySwatch: Colors.deepPurple,
+        primarySwatch: Colors.deepOrange,
         accentColor: Colors.white,
         appBarTheme: AppBarTheme(
           iconTheme: IconThemeData(
