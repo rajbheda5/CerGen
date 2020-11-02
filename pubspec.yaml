@@ -13,12 +13,13 @@ dependencies:
   path_provider: # reading/writing files in application document directory
   file_picker: # using local files from device
   pdf_viewer_plugin: # viewing pdf files
-  pdf: # generating pdf file
+  pdf: ^1.10.1 # generating pdf file
   permission_handler: # handling runtime permissions
   share_extend: # sharing files
   provider: # state-management
   printing: # using image assets in pdf generation
   crypto: #used for hashing
+  barcode: ^1.17.0
 
 dev_dependencies:
   flutter_test:
@@ -27,4 +28,5 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - assets/images/account.png
+    - assets/
+    - assets/images/
